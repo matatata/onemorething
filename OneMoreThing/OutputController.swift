@@ -13,18 +13,23 @@ import Cocoa
 
 class OutputController : NSObject,ExecutorDelegate {
    
-    
-    
-    
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var textView: NSTextView!
-    
+    @IBOutlet weak var outputView: NSTextView!
 
     func fail(_ x: String) {
-        update("fail \(x)")
+        println(x)
     }
     
-    func update(_ x: String) {
+    func echo(_ x: String) {
+       output(x,outputView)
+    }
+    
+    func println(_ x: String) {
+        output(x + "\n", textView)
+    }
+    
+    func output(_ x: String, _ view: NSTextView!) {
         if(x.isEmpty){
             return
         }
@@ -32,18 +37,20 @@ class OutputController : NSObject,ExecutorDelegate {
         window.setIsVisible(true);
         
         
-        let range = NSMakeRange (textView.string.count, 0)
-        textView.replaceCharacters(in: range, with: x)
+        let range = NSMakeRange (view.string.count, 0)
+        view.replaceCharacters(in: range, with: x)
     }
     
     func terminated(_ status: Int32) {
-       window.title = "terminated with \(status)"
+        let msg = "Terminated with \(status)"
+        println(msg)
     }
     
     
     func didLaunch(_ program: String!, _ args: [String]!) {
-        window.title = "\(program!) \(args!)"
+        let msg = "Calling \(program!) \(args!)"
         window.setIsVisible(true)
+        println(msg)
     }
     
     

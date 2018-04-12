@@ -11,7 +11,8 @@ import Foundation
 
 protocol ExecutorDelegate {
     func fail(_ x:String)
-    func update(_ x:String)
+    func println(_ x:String)
+    func echo(_ x:String)
     func terminated(_ status:Int32)
     func didLaunch(_ program:String!, _ args: [String]!)
 }
@@ -30,7 +31,7 @@ class Executor {
         self.args=args
         
         if(!FileManager.default.isExecutableFile(atPath:program)){
-            delegate.fail("Not executable or does not exist: \(program)")
+            delegate.fail("Not executable or does not exist: \(program!)")
             return nil;
         }
         
@@ -63,11 +64,11 @@ class Executor {
                                                         let data = outHandle.availableData
                                                         if data.count > 0 {
                                                             if let str = String(data: data, encoding: String.Encoding.utf8) {
-                                                                self.delegate.update(str);
+                                                                self.delegate.echo(str);
                                                             }
                                                             outHandle.waitForDataInBackgroundAndNotify(forModes: modes)
                                                         } else {
-                                                            print("got eof")
+//                                                            print("got eof")
                                                             NotificationCenter.default.removeObserver(obs1)
                                                         }
         }
@@ -75,7 +76,7 @@ class Executor {
         var obs2 : NSObjectProtocol!
         obs2 = NotificationCenter.default.addObserver(forName: Process.didTerminateNotification,
                                                       object: task, queue: nil) { notification -> Void in
-                                                        print("did terminate")
+//                                                        print("did terminate")
                                                         self.hookTerminated()
                                                         NotificationCenter.default.removeObserver(obs2)
         }

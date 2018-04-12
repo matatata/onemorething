@@ -28,6 +28,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, ExecutorDelegate {
         if let e = Executor("/Users/matteo/.hooker/default.sh",[reason],self){
             e.launch([RunLoopMode.modalPanelRunLoopMode])
         }
+        else {
+            
+            if(StdAlert.dialogOKCancel(question: "Could not call one more thing", text: "quit anyway?")){
+                return NSApplication.TerminateReply.terminateNow
+            }
+            else {
+                return NSApplication.TerminateReply.terminateCancel
+            }
+        }
         
         return NSApplication.TerminateReply.terminateLater
     }
@@ -40,13 +49,16 @@ class AppDelegate: NSObject, NSApplicationDelegate, ExecutorDelegate {
         outputController.didLaunch(program,args)
     }
     
+    func println(_ x: String) {
+        outputController.println(x)
+    }
     
     func fail(_ x: String) {
         outputController.fail(x)
     }
     
-    func update(_ x: String) {
-        outputController.update(x)
+    func echo(_ x: String) {
+        outputController.echo(x)
     }
     
     func terminated(_ status: Int32) {
