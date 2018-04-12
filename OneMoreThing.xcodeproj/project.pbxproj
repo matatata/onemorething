@@ -7,18 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95B8002D207D763100BCC242 /* StdAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B8002C207D763100BCC242 /* StdAlert.swift */; };
 		95D72075207D5581001A8795 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D72074207D5581001A8795 /* AppDelegate.swift */; };
 		95D72077207D5582001A8795 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95D72076207D5582001A8795 /* Assets.xcassets */; };
-		95D7207A207D5582001A8795 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95D72078207D5582001A8795 /* MainMenu.xib */; };
+		95D72083207D5A0C001A8795 /* Executor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D72082207D5A0C001A8795 /* Executor.swift */; };
+		95D72087207D6210001A8795 /* OutputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D72086207D6210001A8795 /* OutputController.swift */; };
+		95D72089207D64C4001A8795 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95D72088207D64C4001A8795 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95B8002C207D763100BCC242 /* StdAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StdAlert.swift; sourceTree = "<group>"; };
 		95D72071207D5581001A8795 /* OneMoreThing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneMoreThing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D72074207D5581001A8795 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95D72076207D5582001A8795 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		95D72079207D5582001A8795 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		95D7207B207D5582001A8795 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95D7207C207D5582001A8795 /* OneMoreThing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneMoreThing.entitlements; sourceTree = "<group>"; };
+		95D72082207D5A0C001A8795 /* Executor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Executor.swift; sourceTree = "<group>"; };
+		95D72086207D6210001A8795 /* OutputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputController.swift; sourceTree = "<group>"; };
+		95D72088207D64C4001A8795 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +59,12 @@
 			children = (
 				95D72074207D5581001A8795 /* AppDelegate.swift */,
 				95D72076207D5582001A8795 /* Assets.xcassets */,
-				95D72078207D5582001A8795 /* MainMenu.xib */,
 				95D7207B207D5582001A8795 /* Info.plist */,
 				95D7207C207D5582001A8795 /* OneMoreThing.entitlements */,
+				95D72082207D5A0C001A8795 /* Executor.swift */,
+				95D72086207D6210001A8795 /* OutputController.swift */,
+				95D72088207D64C4001A8795 /* MainMenu.xib */,
+				95B8002C207D763100BCC242 /* StdAlert.swift */,
 			);
 			path = OneMoreThing;
 			sourceTree = "<group>";
@@ -92,6 +101,11 @@
 				TargetAttributes = {
 					95D72070207D5581001A8795 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -119,7 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95D72077207D5582001A8795 /* Assets.xcassets in Resources */,
-				95D7207A207D5582001A8795 /* MainMenu.xib in Resources */,
+				95D72089207D64C4001A8795 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,22 +144,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95B8002D207D763100BCC242 /* StdAlert.swift in Sources */,
+				95D72083207D5A0C001A8795 /* Executor.swift in Sources */,
+				95D72087207D6210001A8795 /* OutputController.swift in Sources */,
 				95D72075207D5581001A8795 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		95D72078207D5582001A8795 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				95D72079207D5582001A8795 /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		95D7207D207D5582001A8795 /* Debug */ = {
@@ -265,7 +271,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = OneMoreThing/OneMoreThing.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = OneMoreThing/Info.plist;
@@ -283,7 +288,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = OneMoreThing/OneMoreThing.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = OneMoreThing/Info.plist;
