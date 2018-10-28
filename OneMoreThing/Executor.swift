@@ -77,20 +77,29 @@ class Executor {
         obs2 = NotificationCenter.default.addObserver(forName: Process.didTerminateNotification,
                                                       object: task, queue: nil) { notification -> Void in
 //                                                        print("did terminate")
-                                                        self.hookTerminated()
                                                         NotificationCenter.default.removeObserver(obs2)
+                                                        self.hookTerminated(launched:true)
+                                                        
         }
         
-        task.launch()
+        do {
+            try task.run()
+            delegate.didLaunch(program,args);
+        } catch let error as NSError {
+            delegate.println(error.localizedDescription)
+            NotificationCenter.default.removeObserver(obs1)
+            NotificationCenter.default.removeObserver(obs2)
+            self.hookTerminated(launched:false)
+        }
         
-        delegate.didLaunch(program,args);
+        
         
     }
     
     
     
-    func hookTerminated() {
-        delegate.terminated(task.terminationStatus);
+    func hookTerminated(launched: Bool) {
+        delegate.terminated(launched ? task.terminationStatus : -1);
     }
     
     

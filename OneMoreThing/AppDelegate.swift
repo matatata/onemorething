@@ -20,6 +20,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, ExecutorDelegate {
 
         
     }
+    
+   
 
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
         
