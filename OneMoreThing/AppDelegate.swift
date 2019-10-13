@@ -8,9 +8,12 @@
 
 import Cocoa
 
+
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, ExecutorDelegate {
     
+    let script = NSHomeDirectory() + "/.onemorething/onemorething.sh";
    
     @IBOutlet weak var outputController: OutputController!
     
@@ -18,16 +21,46 @@ class AppDelegate: NSObject, NSApplicationDelegate, ExecutorDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 
+        if let e = Executor(script,["start"],StartExecutor(outputController)){
+                   e.launch([RunLoopMode.modalPanelRunLoopMode])
+        }
         
     }
     
-   
+   class StartExecutor: ExecutorDelegate {
+    var outputController : OutputController
+    
+    init(_ outputController:OutputController!) {
+        self.outputController = outputController
+    }
+        
+        func didLaunch(_ program: String!, _ args: [String]!) {
+              outputController.didLaunch(program,args)
+          }
+          
+          func println(_ x: String) {
+              outputController.println(x)
+          }
+          
+          func fail(_ x: String) {
+              outputController.fail(x)
+          }
+          
+          func echo(_ x: String) {
+              outputController.echo(x)
+          }
+          
+          func terminated(_ status: Int32) {
+              outputController.terminated(status)
+          }
+
+   }
 
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
         
         reason = quitReason()
         
-        if let e = Executor("/Users/matteo/.hooker/default.sh",[reason],self){
+        if let e = Executor(script,[reason],self){
             e.launch([RunLoopMode.modalPanelRunLoopMode])
         }
         else {
@@ -44,7 +77,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ExecutorDelegate {
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+       
     }
     
     func didLaunch(_ program: String!, _ args: [String]!) {
