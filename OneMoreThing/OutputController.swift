@@ -11,9 +11,9 @@ import Foundation
 import Cocoa
 
 
-class OutputController : NSObject,ExecutorDelegate {
+class OutputController : NSWindowController,ExecutorDelegate {
    
-    @IBOutlet weak var window: NSWindow!
+    
     @IBOutlet weak var textView: NSTextView!
     @IBOutlet weak var outputView: NSTextView!
 
@@ -34,11 +34,13 @@ class OutputController : NSObject,ExecutorDelegate {
             return
         }
         
-        window.setIsVisible(true);
+        window!.setIsVisible(true);
         
         
         let range = NSMakeRange (view.string.count, 0)
         view.replaceCharacters(in: range, with: x)
+        
+        view.scrollPageDown(self)
     }
     
     func terminated(_ status: Int32) {
@@ -49,7 +51,7 @@ class OutputController : NSObject,ExecutorDelegate {
     
     func didLaunch(_ program: String!, _ args: [String]!) {
         let msg = "Calling \(program!) \(args!)"
-        window.setIsVisible(true)
+        window!.setIsVisible(true)
         println(msg)
     }
     

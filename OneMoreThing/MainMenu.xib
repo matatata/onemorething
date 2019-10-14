@@ -39,7 +39,11 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                            <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                            <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
+                                <connections>
+                                    <action selector="showWindow:" target="O20-5p-ayb" id="mTQ-ea-Idb"/>
+                                </connections>
+                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                             <menuItem title="Services" id="NMo-om-nkz">
                                 <modifierMask key="keyEquivalentModifierMask"/>
@@ -688,37 +692,37 @@
             </items>
             <point key="canvasLocation" x="139" y="154"/>
         </menu>
-        <window title="Output" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="" animationBehavior="default" id="4Qu-ro-c9y">
+        <window title="Messages/Output" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="" animationBehavior="default" id="4Qu-ro-c9y">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="131" y="159" width="337" height="253"/>
+            <rect key="contentRect" x="131" y="159" width="501" height="303"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="cFZ-JF-MrR">
-                <rect key="frame" x="0.0" y="0.0" width="337" height="253"/>
+                <rect key="frame" x="0.0" y="0.0" width="501" height="303"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="paneSplitter" translatesAutoresizingMaskIntoConstraints="NO" id="cbu-gi-eQJ">
-                        <rect key="frame" x="0.0" y="0.0" width="337" height="253"/>
+                        <rect key="frame" x="0.0" y="0.0" width="501" height="303"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <customView fixedFrame="YES" id="lp4-QD-Lie">
-                                <rect key="frame" x="0.0" y="0.0" width="337" height="120"/>
+                                <rect key="frame" x="0.0" y="0.0" width="501" height="144"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
-                                    <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZo-7m-Oez">
-                                        <rect key="frame" x="0.0" y="0.0" width="337" height="120"/>
+                                    <scrollView toolTip="Application messages" fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZo-7m-Oez">
+                                        <rect key="frame" x="0.0" y="0.0" width="501" height="144"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="OTk-Kn-d8Z">
-                                            <rect key="frame" x="1" y="1" width="335" height="118"/>
+                                            <rect key="frame" x="1" y="1" width="499" height="142"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <textView ambiguous="YES" editable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="panel" continuousSpellChecking="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="gM5-RL-9Hy">
-                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="118"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="499" height="142"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    <size key="minSize" width="335" height="118"/>
-                                                    <size key="maxSize" width="463" height="10000000"/>
+                                                    <size key="minSize" width="499" height="142"/>
+                                                    <size key="maxSize" width="516" height="10000000"/>
                                                     <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 </textView>
                                             </subviews>
@@ -728,30 +732,30 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="J7p-rd-ukN">
-                                            <rect key="frame" x="320" y="1" width="16" height="118"/>
+                                            <rect key="frame" x="484" y="1" width="16" height="142"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                     </scrollView>
                                 </subviews>
                             </customView>
                             <customView fixedFrame="YES" id="Qwj-jk-upF">
-                                <rect key="frame" x="0.0" y="130" width="337" height="123"/>
+                                <rect key="frame" x="0.0" y="154" width="501" height="149"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
-                                    <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qr1-Uh-6mB">
-                                        <rect key="frame" x="0.0" y="0.0" width="337" height="123"/>
+                                    <scrollView toolTip="Program output" fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qr1-Uh-6mB">
+                                        <rect key="frame" x="0.0" y="0.0" width="501" height="149"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="lZe-SR-gSH">
-                                            <rect key="frame" x="1" y="1" width="335" height="121"/>
+                                            <rect key="frame" x="1" y="1" width="499" height="147"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <textView ambiguous="YES" editable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="panel" continuousSpellChecking="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="gZf-Sd-yEg">
-                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="121"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="499" height="147"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    <size key="minSize" width="335" height="121"/>
-                                                    <size key="maxSize" width="463" height="10000000"/>
+                                                    <size key="minSize" width="499" height="147"/>
+                                                    <size key="maxSize" width="516" height="10000000"/>
                                                     <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 </textView>
                                             </subviews>
@@ -761,7 +765,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="rbx-rd-hHf">
-                                            <rect key="frame" x="320" y="1" width="16" height="121"/>
+                                            <rect key="frame" x="484" y="1" width="16" height="147"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                     </scrollView>
@@ -775,7 +779,134 @@
                     </splitView>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="25.5" y="-172.5"/>
+            <point key="canvasLocation" x="-134" y="-473"/>
         </window>
+        <window title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="waO-sd-TV5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="131" y="158" width="518" height="227"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <view key="contentView" id="aK1-JU-9CE">
+                <rect key="frame" x="0.0" y="0.0" width="518" height="227"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UMn-5u-83i">
+                        <rect key="frame" x="20" y="129" width="328" height="21"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="NDy-c7-mA0">
+                            <font key="font" usesAppearanceFont="YES"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="hhK-WA-7yh" name="value" keyPath="values.startProgramPath" id="vWc-jj-av7"/>
+                        </connections>
+                    </textField>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rVH-1n-T8f">
+                        <rect key="frame" x="18" y="20" width="330" height="21"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="8WW-vB-4PH">
+                            <font key="font" usesAppearanceFont="YES"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="hhK-WA-7yh" name="value" keyPath="values.quitProgramPath" id="x16-lf-r5M"/>
+                        </connections>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="juF-du-sht">
+                        <rect key="frame" x="16" y="96" width="268" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" lineBreakMode="clipping" title="Executed on Quit/Logout/Restart/Shutdown" id="U09-PI-7mN">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UQV-PJ-Pqt">
+                        <rect key="frame" x="350" y="122" width="85" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Browse" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nsj-PW-Ds1">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="browseStartFileWithSender:" target="O20-5p-ayb" id="b9c-Ma-XdO"/>
+                        </connections>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wJU-Ap-wTF">
+                        <rect key="frame" x="16" y="155" width="484" height="28"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" title="This program will be executed with argument &quot;start&quot; when the Application starts." id="Eef-xI-7p7">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Ua-NR-83C">
+                        <rect key="frame" x="18" y="49" width="484" height="39"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" id="GQV-fs-Yay">
+                            <font key="font" metaFont="smallSystem"/>
+                            <string key="title">This program will be executed with argument "quit", "logout", "restart" or "shutdown" when the Application is terminated due to one of the beforementioned events.</string>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CLq-Ol-fJC">
+                        <rect key="frame" x="18" y="191" width="184" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" lineBreakMode="clipping" title="Executed on Application Start" id="Ys1-5o-wFZ">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B9f-vp-ffT">
+                        <rect key="frame" x="435" y="122" width="69" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Test" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UXd-b2-tEf">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="testStartWithSender:" target="O20-5p-ayb" id="h3P-4x-Oe1"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ww9-fD-sPc">
+                        <rect key="frame" x="435" y="13" width="69" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Test" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aSQ-ak-cT6">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="testQuitWithSender:" target="O20-5p-ayb" id="XYT-tm-owv"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nl9-np-3o1">
+                        <rect key="frame" x="350" y="13" width="85" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Browse" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="f4n-EH-T3q">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="browseStopFileWithSender:" target="O20-5p-ayb" id="DRv-W5-drL"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <point key="canvasLocation" x="-101" y="-872.5"/>
+        </window>
+        <customObject id="O20-5p-ayb" customClass="SettingsController" customModule="OneMoreThing" customModuleProvider="target">
+            <connections>
+                <outlet property="filename_start" destination="UMn-5u-83i" id="WBs-b7-ALN"/>
+                <outlet property="filename_stop" destination="rVH-1n-T8f" id="uIN-gC-QYq"/>
+                <outlet property="outputController" destination="NvP-TI-X7b" id="7Pr-2h-pjE"/>
+                <outlet property="window" destination="waO-sd-TV5" id="Vjk-pf-TvT"/>
+            </connections>
+        </customObject>
+        <userDefaultsController representsSharedInstance="YES" id="hhK-WA-7yh"/>
     </objects>
 </document>

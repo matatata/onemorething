@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9501A34123550B4700A258C0 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501A34023550B4700A258C0 /* SettingsController.swift */; };
+		954B9D5523552A2C0005CF64 /* SimpleExecutorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B9D5423552A2C0005CF64 /* SimpleExecutorDelegate.swift */; };
 		95B8002D207D763100BCC242 /* StdAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B8002C207D763100BCC242 /* StdAlert.swift */; };
 		95D72075207D5581001A8795 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D72074207D5581001A8795 /* AppDelegate.swift */; };
 		95D72077207D5582001A8795 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95D72076207D5582001A8795 /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9501A34023550B4700A258C0 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		954B9D5423552A2C0005CF64 /* SimpleExecutorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleExecutorDelegate.swift; sourceTree = "<group>"; };
 		95B8002C207D763100BCC242 /* StdAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StdAlert.swift; sourceTree = "<group>"; };
 		95D72071207D5581001A8795 /* OneMoreThing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneMoreThing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D72074207D5581001A8795 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +69,8 @@
 				95D72086207D6210001A8795 /* OutputController.swift */,
 				95D72088207D64C4001A8795 /* MainMenu.xib */,
 				95B8002C207D763100BCC242 /* StdAlert.swift */,
+				9501A34023550B4700A258C0 /* SettingsController.swift */,
+				954B9D5423552A2C0005CF64 /* SimpleExecutorDelegate.swift */,
 			);
 			path = OneMoreThing;
 			sourceTree = "<group>";
@@ -96,7 +102,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = Infomac;
 				TargetAttributes = {
 					95D72070207D5581001A8795 = {
@@ -146,8 +152,10 @@
 			files = (
 				95B8002D207D763100BCC242 /* StdAlert.swift in Sources */,
 				95D72083207D5A0C001A8795 /* Executor.swift in Sources */,
+				954B9D5523552A2C0005CF64 /* SimpleExecutorDelegate.swift in Sources */,
 				95D72087207D6210001A8795 /* OutputController.swift in Sources */,
 				95D72075207D5581001A8795 /* AppDelegate.swift in Sources */,
+				9501A34123550B4700A258C0 /* SettingsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

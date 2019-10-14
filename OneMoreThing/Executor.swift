@@ -83,7 +83,7 @@ class Executor {
         }
         
         do {
-            try task.run()
+            try task.launch()
             delegate.didLaunch(program,args);
         } catch let error as NSError {
             delegate.println(error.localizedDescription)

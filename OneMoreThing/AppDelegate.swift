@@ -13,59 +13,55 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, ExecutorDelegate {
     
-    let script = NSHomeDirectory() + "/.onemorething/onemorething.sh";
-   
     @IBOutlet weak var outputController: OutputController!
     
+    let startProgramPathKey = "startProgramPath"
+    let quitProgramPathKey = "quitProgramPath"
+    
     var reason:String=""
+    
+    override init() {
+        //UserDefaults.standard.register(defaults: [ quitProgramPathKey : NSHomeDirectory() + "/.onemorething/onemorething.sh"])
+    }
+    
+    func startupScript() -> String? {
+        return UserDefaults.standard.string(forKey: startProgramPathKey)
+    }
+    
+    func quitScript() -> String? {
+        return UserDefaults.standard.string(forKey: quitProgramPathKey)
+    }
+   
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-
-        if let e = Executor(script,["start"],StartExecutor(outputController)){
+        
+        if(startupScript() == nil) {
+            outputController.println("No start program defined")
+            return
+        }
+        
+        if let e = Executor(startupScript(),["start"],SimpleExecutorDelegate(outputController)){
                    e.launch([RunLoopMode.modalPanelRunLoopMode])
         }
         
     }
     
-   class StartExecutor: ExecutorDelegate {
-    var outputController : OutputController
-    
-    init(_ outputController:OutputController!) {
-        self.outputController = outputController
-    }
-        
-        func didLaunch(_ program: String!, _ args: [String]!) {
-              outputController.didLaunch(program,args)
-          }
-          
-          func println(_ x: String) {
-              outputController.println(x)
-          }
-          
-          func fail(_ x: String) {
-              outputController.fail(x)
-          }
-          
-          func echo(_ x: String) {
-              outputController.echo(x)
-          }
-          
-          func terminated(_ status: Int32) {
-              outputController.terminated(status)
-          }
-
-   }
 
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
         
         reason = quitReason()
         
-        if let e = Executor(script,[reason],self){
+        if(quitScript() == nil) {
+            outputController.println("No quit program defined")
+            return NSApplication.TerminateReply.terminateNow
+        }
+        
+        if let e = Executor(quitScript(),[reason],self){
             e.launch([RunLoopMode.modalPanelRunLoopMode])
         }
         else {
             
-            if(StdAlert.dialogOKCancel(question: "Could not call one more thing", text: "quit anyway?")){
+            if(StdAlert.dialogOKCancel(title: "Could not call one more thing", text: "quit anyway?")){
                 return NSApplication.TerminateReply.terminateNow
             }
             else {
@@ -101,7 +97,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ExecutorDelegate {
         var reply = true
         
         if(status != 0){
-            reply = StdAlert.dialogOKCancel(question: "Program exited with \(status)", text: "\(reason) anyway?")
+            reply = StdAlert.dialogOKCancel(title: "Program exited with \(status)", text: "\(reason) anyway?")
         }
         
         NSApp.reply(toApplicationShouldTerminate: reply)
