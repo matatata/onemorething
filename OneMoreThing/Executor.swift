@@ -40,7 +40,7 @@ class Executor {
         
     }
     
-    func launch( _ modes: [RunLoopMode]?) {
+    func launch( _ modes: [RunLoopMode]? = [RunLoopMode.commonModes]) {
 
         let pipe = Pipe()
         
@@ -59,7 +59,7 @@ class Executor {
         outHandle.waitForDataInBackgroundAndNotify(forModes: modes)
         
         var obs1 : NSObjectProtocol!
-        obs1 = NotificationCenter.default.addObserver(forName:NSNotification.Name.NSFileHandleDataAvailable,
+        obs1 = NotificationCenter.default.addObserver(forName:.NSFileHandleDataAvailable,
                                                       object: outHandle, queue: nil) {  notification -> Void in
                                                         let data = outHandle.availableData
                                                         if data.count > 0 {
@@ -83,7 +83,7 @@ class Executor {
         }
         
         do {
-            try task.launch()
+            try task.run()
             delegate.didLaunch(program,args);
         } catch let error as NSError {
             delegate.println(error.localizedDescription)

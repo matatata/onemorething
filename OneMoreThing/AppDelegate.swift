@@ -15,9 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ExecutorDelegate {
     
     @IBOutlet weak var outputController: OutputController!
     
-    let startProgramPathKey = "startProgramPath"
-    let quitProgramPathKey = "quitProgramPath"
-    
+  
     var reason:String=""
     
     override init() {
@@ -25,11 +23,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, ExecutorDelegate {
     }
     
     func startupScript() -> String? {
-        return UserDefaults.standard.string(forKey: startProgramPathKey)
+        return UserDefaults.standard.string(forKey: SettingsController.startProgramPathKey)
     }
     
     func quitScript() -> String? {
-        return UserDefaults.standard.string(forKey: quitProgramPathKey)
+        return UserDefaults.standard.string(forKey: SettingsController.quitProgramPathKey)
     }
    
 
@@ -41,7 +39,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ExecutorDelegate {
         }
         
         if let e = Executor(startupScript(),["start"],SimpleExecutorDelegate(outputController)){
-                   e.launch([RunLoopMode.modalPanelRunLoopMode])
+                   e.launch()
         }
         
     }
@@ -51,17 +49,21 @@ class AppDelegate: NSObject, NSApplicationDelegate, ExecutorDelegate {
         
         reason = quitReason()
         
-        if(quitScript() == nil) {
+        let script = quitScript();
+        
+        if(script == nil) {
             outputController.println("No quit program defined")
             return NSApplication.TerminateReply.terminateNow
         }
         
-        if let e = Executor(quitScript(),[reason],self){
+        
+        
+        if let e = Executor(script,[reason],self){
             e.launch([RunLoopMode.modalPanelRunLoopMode])
         }
         else {
             
-            if(StdAlert.dialogOKCancel(title: "Could not call one more thing", text: "quit anyway?")){
+            if(StdAlert.dialogOKCancel(title: "Failed to call '\(script!)'", text: "quit anyway?")){
                 return NSApplication.TerminateReply.terminateNow
             }
             else {

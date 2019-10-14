@@ -12,6 +12,9 @@ import Cocoa
 
 class SettingsController: NSWindowController {
     
+    static let startProgramPathKey = "startProgramPath"
+    static let quitProgramPathKey = "quitProgramPath"
+      
     
     @IBOutlet weak var outputController: OutputController!
     
@@ -20,14 +23,14 @@ class SettingsController: NSWindowController {
     
     
     @IBAction func browseStartFile(sender: AnyObject) {
-        browseExecutableFile(sender: sender, textField: filename_start, title: "Select file to be run when the application starts")
+        browseExecutableFile(sender: sender, textField: filename_start, title: "Select file to be run when the application starts",userDefaultsKey: SettingsController.startProgramPathKey)
     }
     
     @IBAction func browseStopFile(sender: AnyObject) {
-        browseExecutableFile(sender: sender, textField: filename_stop, title: "Select file to be run when the application quits")
+        browseExecutableFile(sender: sender, textField: filename_stop, title: "Select file to be run when the application quits",userDefaultsKey: SettingsController.quitProgramPathKey)
     }
     
-    func browseExecutableFile(sender: AnyObject, textField: NSTextField!, title: String) {
+    func browseExecutableFile(sender: AnyObject, textField: NSTextField!, title: String!, userDefaultsKey: String! ) {
         
         let dialog: NSOpenPanel = NSOpenPanel();
         
@@ -56,6 +59,7 @@ class SettingsController: NSWindowController {
                     }
                 }
                 textField.stringValue = path
+                UserDefaults.standard.set(path, forKey: userDefaultsKey)
             }
         } else {
             // User clicked on "Cancel"
@@ -67,13 +71,13 @@ class SettingsController: NSWindowController {
     
     @IBAction func testStart(sender: AnyObject) {
         if let e = Executor(filename_start.stringValue,["start"],SimpleExecutorDelegate(outputController)){
-                             e.launch([RunLoopMode.modalPanelRunLoopMode])
+                             e.launch()
                   }
     }
     
     @IBAction func testQuit(sender: AnyObject) {
         if let e = Executor(filename_stop.stringValue,["quit"],SimpleExecutorDelegate(outputController)){
-                       e.launch([RunLoopMode.modalPanelRunLoopMode])
+                       e.launch()
             }
     }
 }
