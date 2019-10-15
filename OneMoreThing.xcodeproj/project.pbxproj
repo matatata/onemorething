@@ -15,6 +15,7 @@
 		95D72083207D5A0C001A8795 /* Executor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D72082207D5A0C001A8795 /* Executor.swift */; };
 		95D72087207D6210001A8795 /* OutputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D72086207D6210001A8795 /* OutputController.swift */; };
 		95D72089207D64C4001A8795 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95D72088207D64C4001A8795 /* MainMenu.xib */; };
+		B12136772355D72D0069944D /* OneMoreThingExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12136762355D72D0069944D /* OneMoreThingExecutor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		95D72082207D5A0C001A8795 /* Executor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Executor.swift; sourceTree = "<group>"; };
 		95D72086207D6210001A8795 /* OutputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputController.swift; sourceTree = "<group>"; };
 		95D72088207D64C4001A8795 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		B12136762355D72D0069944D /* OneMoreThingExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneMoreThingExecutor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				95B8002C207D763100BCC242 /* StdAlert.swift */,
 				9501A34023550B4700A258C0 /* SettingsController.swift */,
 				954B9D5423552A2C0005CF64 /* SimpleExecutorDelegate.swift */,
+				B12136762355D72D0069944D /* OneMoreThingExecutor.swift */,
 			);
 			path = OneMoreThing;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 				95D72083207D5A0C001A8795 /* Executor.swift in Sources */,
 				954B9D5523552A2C0005CF64 /* SimpleExecutorDelegate.swift in Sources */,
 				95D72087207D6210001A8795 /* OutputController.swift in Sources */,
+				B12136772355D72D0069944D /* OneMoreThingExecutor.swift in Sources */,
 				95D72075207D5581001A8795 /* AppDelegate.swift in Sources */,
 				9501A34123550B4700A258C0 /* SettingsController.swift in Sources */,
 			);

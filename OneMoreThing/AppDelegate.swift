@@ -14,7 +14,7 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate, ExecutorDelegate {
     
     @IBOutlet weak var outputController: OutputController!
-    
+    @IBOutlet weak var settingsController: SettingsController!
   
     var reason:String=""
     
@@ -22,23 +22,17 @@ class AppDelegate: NSObject, NSApplicationDelegate, ExecutorDelegate {
         //UserDefaults.standard.register(defaults: [ quitProgramPathKey : NSHomeDirectory() + "/.onemorething/onemorething.sh"])
     }
     
-    func startupScript() -> String? {
-        return UserDefaults.standard.string(forKey: SettingsController.startProgramPathKey)
-    }
-    
-    func quitScript() -> String? {
-        return UserDefaults.standard.string(forKey: SettingsController.quitProgramPathKey)
-    }
+   
    
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
-        if(startupScript() == nil) {
+        if(settingsController.startupScript() == nil) {
             outputController.println("No start program defined")
             return
         }
         
-        if let e = Executor(startupScript(),["start"],SimpleExecutorDelegate(outputController)){
+        if let e = OneMoreThingExecutor.forStartScript(settingsController,SimpleExecutorDelegate(outputController)){
                    e.launch()
         }
         
@@ -49,7 +43,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ExecutorDelegate {
         
         reason = quitReason()
         
-        let script = quitScript();
+        let script = settingsController.quitScript();
         
         if(script == nil) {
             outputController.println("No quit program defined")
@@ -58,7 +52,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ExecutorDelegate {
         
         
         
-        if let e = Executor(script,[reason],self){
+        if let e = OneMoreThingExecutor.forQuitScript(settingsController,reason,self){
             e.launch([RunLoopMode.modalPanelRunLoopMode])
         }
         else {

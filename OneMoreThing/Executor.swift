@@ -25,7 +25,7 @@ class Executor {
     
     var delegate:ExecutorDelegate
     
-    init?(_ program:String!, _ args: [String]!, _ delegate:ExecutorDelegate) {
+    internal init?(_ program:String!, _ args: [String]!, _ delegate:ExecutorDelegate,  _ env:Dictionary<String,String>?=nil) {
         self.delegate = delegate;
         self.program=program
         self.args=args
@@ -36,8 +36,9 @@ class Executor {
         }
         
         self.task=Process();
-        
-        
+        if(env != nil) {
+            self.task.environment = env
+        }
     }
     
     func launch( _ modes: [RunLoopMode]? = [RunLoopMode.commonModes]) {

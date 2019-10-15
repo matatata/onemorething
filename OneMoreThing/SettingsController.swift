@@ -14,13 +14,14 @@ class SettingsController: NSWindowController {
     
     static let startProgramPathKey = "startProgramPath"
     static let quitProgramPathKey = "quitProgramPath"
+    static let useEnvVarToPassEventIdKey = "useEnvVarToPassEventId"
       
     
     @IBOutlet weak var outputController: OutputController!
     
     @IBOutlet weak var filename_start: NSTextField!
     @IBOutlet weak var filename_stop: NSTextField!
-    
+    @IBOutlet weak var use_env_variable: NSButton!
     
     @IBAction func browseStartFile(sender: AnyObject) {
         browseExecutableFile(sender: sender, textField: filename_start, title: "Select file to be run when the application starts",userDefaultsKey: SettingsController.startProgramPathKey)
@@ -70,14 +71,26 @@ class SettingsController: NSWindowController {
     
     
     @IBAction func testStart(sender: AnyObject) {
-        if let e = Executor(filename_start.stringValue,["start"],SimpleExecutorDelegate(outputController)){
+        if let e = OneMoreThingExecutor.forStartScript(self,SimpleExecutorDelegate(outputController)){
                              e.launch()
                   }
     }
     
     @IBAction func testQuit(sender: AnyObject) {
-        if let e = Executor(filename_stop.stringValue,["quit"],SimpleExecutorDelegate(outputController)){
+        if let e = OneMoreThingExecutor.forQuitScript(self,"quit",SimpleExecutorDelegate(outputController)){
                        e.launch()
             }
+    }
+    
+    func startupScript() -> String? {
+        return UserDefaults.standard.string(forKey: SettingsController.startProgramPathKey)
+    }
+    
+    func quitScript() -> String? {
+        return UserDefaults.standard.string(forKey: SettingsController.quitProgramPathKey)
+    }
+    
+    func useEnvVarToPassEventId() -> Bool! {
+        return UserDefaults.standard.bool(forKey: SettingsController.useEnvVarToPassEventIdKey)
     }
 }

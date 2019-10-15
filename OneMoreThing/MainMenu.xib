@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15400" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15400"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -23,6 +23,7 @@
         <customObject id="kJU-9p-tER" customClass="AppDelegate" customModule="OneMoreThing" customModuleProvider="target">
             <connections>
                 <outlet property="outputController" destination="NvP-TI-X7b" id="goi-lt-E6m"/>
+                <outlet property="settingsController" destination="O20-5p-ayb" id="CgV-dk-8qc"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
@@ -428,13 +429,12 @@
                     </menu>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="16" y="82"/>
+            <point key="canvasLocation" x="-231" y="-1067"/>
         </menu>
-        <window title="Messages/Output" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="" animationBehavior="default" id="4Qu-ro-c9y">
+        <window title="Messages/Output" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="MainWindow" animationBehavior="default" id="4Qu-ro-c9y">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="131" y="159" width="501" height="303"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <rect key="contentRect" x="767" y="443" width="501" height="303"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1178"/>
             <view key="contentView" id="cFZ-JF-MrR">
                 <rect key="frame" x="0.0" y="0.0" width="501" height="303"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -451,26 +451,26 @@
                                         <rect key="frame" x="0.0" y="0.0" width="501" height="144"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="OTk-Kn-d8Z">
-                                            <rect key="frame" x="1" y="1" width="499" height="142"/>
+                                            <rect key="frame" x="1" y="1" width="484" height="142"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <textView ambiguous="YES" editable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="panel" continuousSpellChecking="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="gM5-RL-9Hy">
-                                                    <rect key="frame" x="0.0" y="0.0" width="499" height="142"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="484" height="142"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    <size key="minSize" width="499" height="142"/>
+                                                    <size key="minSize" width="484" height="142"/>
                                                     <size key="maxSize" width="516" height="10000000"/>
                                                     <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 </textView>
                                             </subviews>
                                         </clipView>
-                                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="8mj-55-fLI">
+                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="8mj-55-fLI">
                                             <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
-                                        <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="J7p-rd-ukN">
-                                            <rect key="frame" x="484" y="1" width="16" height="142"/>
+                                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="J7p-rd-ukN">
+                                            <rect key="frame" x="485" y="1" width="15" height="142"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                     </scrollView>
@@ -484,26 +484,26 @@
                                         <rect key="frame" x="0.0" y="0.0" width="501" height="149"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="lZe-SR-gSH">
-                                            <rect key="frame" x="1" y="1" width="499" height="147"/>
+                                            <rect key="frame" x="1" y="1" width="484" height="147"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <textView ambiguous="YES" editable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="panel" continuousSpellChecking="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="gZf-Sd-yEg">
-                                                    <rect key="frame" x="0.0" y="0.0" width="499" height="147"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="484" height="147"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    <size key="minSize" width="499" height="147"/>
+                                                    <size key="minSize" width="484" height="147"/>
                                                     <size key="maxSize" width="516" height="10000000"/>
                                                     <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 </textView>
                                             </subviews>
                                         </clipView>
-                                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="5Ef-lg-J0V">
+                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="5Ef-lg-J0V">
                                             <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
-                                        <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="rbx-rd-hHf">
-                                            <rect key="frame" x="484" y="1" width="16" height="147"/>
+                                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="rbx-rd-hHf">
+                                            <rect key="frame" x="485" y="1" width="15" height="147"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                     </scrollView>
@@ -517,19 +517,18 @@
                     </splitView>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="-134" y="-473"/>
+            <point key="canvasLocation" x="-244" y="-1315"/>
         </window>
-        <window title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="waO-sd-TV5">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="131" y="158" width="518" height="227"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+        <window title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="PreferencesWindow" animationBehavior="default" id="waO-sd-TV5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+            <rect key="contentRect" x="212" y="740" width="599" height="284"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1178"/>
             <view key="contentView" id="aK1-JU-9CE">
-                <rect key="frame" x="0.0" y="0.0" width="518" height="227"/>
+                <rect key="frame" x="0.0" y="0.0" width="599" height="284"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UMn-5u-83i">
-                        <rect key="frame" x="20" y="129" width="328" height="21"/>
+                        <rect key="frame" x="20" y="219" width="409" height="21"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="NDy-c7-mA0">
                             <font key="font" usesAppearanceFont="YES"/>
@@ -545,7 +544,7 @@
                         </connections>
                     </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rVH-1n-T8f">
-                        <rect key="frame" x="18" y="20" width="330" height="21"/>
+                        <rect key="frame" x="20" y="143" width="411" height="21"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="8WW-vB-4PH">
                             <font key="font" usesAppearanceFont="YES"/>
@@ -561,16 +560,16 @@
                         </connections>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="juF-du-sht">
-                        <rect key="frame" x="16" y="96" width="268" height="16"/>
+                        <rect key="frame" x="18" y="172" width="268" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" lineBreakMode="clipping" title="Executed on Quit/Logout/Restart/Shutdown" id="U09-PI-7mN">
+                        <textFieldCell key="cell" lineBreakMode="clipping" title="Execute on Quit/Logout/Restart/Shutdown" id="U09-PI-7mN">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UQV-PJ-Pqt">
-                        <rect key="frame" x="350" y="122" width="85" height="32"/>
+                        <rect key="frame" x="431" y="212" width="85" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Browse" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nsj-PW-Ds1">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -581,37 +580,37 @@
                         </connections>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wJU-Ap-wTF">
-                        <rect key="frame" x="16" y="155" width="484" height="28"/>
+                        <rect key="frame" x="18" y="197" width="565" height="14"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" title="This program will be executed with argument &quot;start&quot; when the Application starts." id="Eef-xI-7p7">
+                        <textFieldCell key="cell" title="This program will be executed with event identifier &quot;start&quot; when the Application starts." id="Eef-xI-7p7">
                             <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Ua-NR-83C">
-                        <rect key="frame" x="18" y="49" width="484" height="39"/>
+                        <rect key="frame" x="18" y="100" width="565" height="28"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" id="GQV-fs-Yay">
                             <font key="font" metaFont="smallSystem"/>
-                            <string key="title">This program will be executed with argument "quit", "logout", "restart" or "shutdown" when the Application is terminated due to one of the beforementioned events.</string>
+                            <string key="title">This program will be executed with event identifier "quit", "logout", "restart" or "shutdown" when the Application is terminated due to one of the beforementioned events.</string>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CLq-Ol-fJC">
-                        <rect key="frame" x="18" y="191" width="184" height="16"/>
+                        <rect key="frame" x="18" y="248" width="184" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" lineBreakMode="clipping" title="Executed on Application Start" id="Ys1-5o-wFZ">
+                        <textFieldCell key="cell" lineBreakMode="clipping" title="Execute on Application Start" id="Ys1-5o-wFZ">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B9f-vp-ffT">
-                        <rect key="frame" x="435" y="122" width="69" height="32"/>
+                        <rect key="frame" x="516" y="212" width="69" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="push" title="Test" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UXd-b2-tEf">
+                        <buttonCell key="cell" type="push" title="Run" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UXd-b2-tEf">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -620,9 +619,9 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ww9-fD-sPc">
-                        <rect key="frame" x="435" y="13" width="69" height="32"/>
+                        <rect key="frame" x="516" y="135" width="69" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="push" title="Test" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aSQ-ak-cT6">
+                        <buttonCell key="cell" type="push" title="Run" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aSQ-ak-cT6">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -631,7 +630,7 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nl9-np-3o1">
-                        <rect key="frame" x="350" y="13" width="85" height="32"/>
+                        <rect key="frame" x="431" y="135" width="85" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Browse" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="f4n-EH-T3q">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -641,15 +640,46 @@
                             <action selector="browseStopFileWithSender:" target="O20-5p-ayb" id="DRv-W5-drL"/>
                         </connections>
                     </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ss7-Ux-FMc">
+                        <rect key="frame" x="18" y="75" width="184" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" lineBreakMode="clipping" title="Event Identifier" id="YTg-rp-DwE">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eeq-Lv-AAw">
+                        <rect key="frame" x="18" y="51" width="336" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="check" title="Use environment variable to pass event identifier" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="HoA-Qi-Hfk">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <binding destination="hhK-WA-7yh" name="value" keyPath="values.useEnvVarToPassEventId" id="CUj-xK-VGF"/>
+                        </connections>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BMA-ss-9Sd">
+                        <rect key="frame" x="18" y="20" width="565" height="28"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" id="6OH-U8-hd8">
+                            <font key="font" metaFont="smallSystem"/>
+                            <string key="title">If checked the event identifiers "start", "quit", "logout", "restart" or "shutdown" will be set in a environment variable $ONEMORETHING_EVENT rather than being passed to the program as as single argument.</string>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="-101" y="-872.5"/>
+            <point key="canvasLocation" x="-1821" y="-2857"/>
         </window>
         <customObject id="O20-5p-ayb" customClass="SettingsController" customModule="OneMoreThing" customModuleProvider="target">
             <connections>
                 <outlet property="filename_start" destination="UMn-5u-83i" id="WBs-b7-ALN"/>
                 <outlet property="filename_stop" destination="rVH-1n-T8f" id="uIN-gC-QYq"/>
                 <outlet property="outputController" destination="NvP-TI-X7b" id="7Pr-2h-pjE"/>
+                <outlet property="use_env_variable" destination="eeq-Lv-AAw" id="gkk-ky-YSv"/>
                 <outlet property="window" destination="waO-sd-TV5" id="Vjk-pf-TvT"/>
             </connections>
         </customObject>
