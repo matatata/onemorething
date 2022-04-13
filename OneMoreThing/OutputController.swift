@@ -16,7 +16,8 @@ class OutputController : NSWindowController,ExecutorDelegate {
     
     @IBOutlet weak var textView: NSTextView!
     @IBOutlet weak var outputView: NSTextView!
-
+    @IBOutlet weak var menuVisibilityToggle: NSMenuItem!
+    
     func fail(_ x: String) {
         println(x)
     }
@@ -55,6 +56,26 @@ class OutputController : NSWindowController,ExecutorDelegate {
         println(msg)
     }
     
+    
+    @IBAction func toggleWindowVisibility(sender: AnyObject) {
+        let isVisible = window!.isVisible
+        window?.setIsVisible(!isVisible)
+    }
+    
+    override func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
+        if menuItem == menuVisibilityToggle {
+            let isVisible = window!.isVisible
+            if isVisible {
+                menuVisibilityToggle.title = "Hide Main Window"
+            }
+            else {
+                menuVisibilityToggle.title = "Show Main Window"
+            }
+            return true
+        }
+        
+        return super.validateMenuItem(menuItem)
+    }
     
 
 }
